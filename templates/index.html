@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Первая страница</title>
+</head>
+<body>
+    <h1>Кликер</h1>
+    <h2 id="counter">{{ clicks }}</h2>
+    <button onclick="clickHandler()">Клик!</button>
+
+    <script>
+        function clickHandler() {
+            fetch('/click', {method: 'POST'})
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('counter').textContent = data.clicks;
+                });
+        }
+    </script>
+</body>
+</html>
