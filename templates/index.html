@@ -5,18 +5,12 @@
     <title>Первая страница</title>
 </head>
 <body>
-    <h1>Кликер</h1>
-    <h2 id="counter">{{ clicks }}</h2>
-    <button onclick="clickHandler()">Клик!</button>
+    <h2>{{cnt}}</h2>
 
-    <script>
-        function clickHandler() {
-            fetch('/click', {method: 'POST'})
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('counter').textContent = data.clicks;
-                });
-        }
-    </script>
+    <form method="POST" action="/click">
+        <button type="submit">Клик</button>
+    </form>
+
+
 </body>
 </html>

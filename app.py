@@ -20,12 +20,7 @@ def index():
 @app.route("/click", methods=['POST'])
 def click():
     session['clicks'] += 1
-    return jsonify({'clicks': session['clicks']})
-
-@app.route("/reset", methods=['POST'])
-def reset():
-    session['clicks'] = 0
-    return jsonify({'clicks': 0})
+    return redirect(url_for('index'))
 
 
 
