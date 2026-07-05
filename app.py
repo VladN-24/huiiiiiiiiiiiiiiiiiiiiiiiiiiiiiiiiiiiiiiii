@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request, session, url_for, make_response, jsonify
-import sqlite3
+
 
 app = Flask(__name__)
 app.secret_key = 'vovavovavova'
